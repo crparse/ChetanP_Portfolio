@@ -29,9 +29,9 @@ export default function Footer() {
         </div>
 
         <div className="flex gap-6">
-          <a href="#" className="text-xs font-mono uppercase tracking-widest text-white/40 hover:text-neon-blue transition-colors">GitHub</a>
-          <a href="#" className="text-xs font-mono uppercase tracking-widest text-white/40 hover:text-neon-blue transition-colors">LinkedIn</a>
-          <a href="#" className="text-xs font-mono uppercase tracking-widest text-white/40 hover:text-neon-blue transition-colors">Twitter</a>
+          <a href={PERSONAL_INFO.socials.github} target="_blank" rel="noopener noreferrer" className="text-xs font-mono uppercase tracking-widest text-white/40 hover:text-neon-blue transition-colors">GitHub</a>
+          <a href={PERSONAL_INFO.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-xs font-mono uppercase tracking-widest text-white/40 hover:text-neon-blue transition-colors">LinkedIn</a>
+          <a href={PERSONAL_INFO.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-xs font-mono uppercase tracking-widest text-white/40 hover:text-neon-blue transition-colors">Instagram</a>
         </div>
       </div>
       

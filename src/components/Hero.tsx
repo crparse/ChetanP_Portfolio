@@ -4,7 +4,7 @@
  */
 
 import { motion } from 'motion/react';
-import { Github, Linkedin, Mail, FileText, ChevronRight, Terminal as TerminalIcon } from 'lucide-react';
+import { Github, Linkedin, Mail, FileText, ChevronRight, Instagram, Terminal as TerminalIcon } from 'lucide-react';
 import { PERSONAL_INFO } from '../constants';
 import { useState, useEffect } from 'react';
 
@@ -71,25 +71,29 @@ export default function Hero() {
             >
               View Projects <ChevronRight className="w-5 h-5" />
             </motion.a>
-            <motion.button
+            <motion.a
+              href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 glass border border-white/10 font-bold rounded-xl hover:bg-white/5 transition-all text-white/90"
+              className="px-8 py-4 glass border border-white/10 font-bold rounded-xl hover:bg-white/5 transition-all text-white/90 flex items-center justify-center"
             >
               Contact Me
-            </motion.button>
+            </motion.a>
           </div>
 
           <div className="mt-12 flex gap-6">
             {[
-              { icon: Github, href: "#", label: "GitHub" },
-              { icon: Linkedin, href: "#", label: "LinkedIn" },
+              { icon: Github, href: PERSONAL_INFO.socials.github, label: "GitHub" },
+              { icon: Linkedin, href: PERSONAL_INFO.socials.linkedin, label: "LinkedIn" },
+              { icon: Instagram, href: PERSONAL_INFO.socials.instagram, label: "Instagram" },
               { icon: Mail, href: `mailto:${PERSONAL_INFO.email}`, label: "Email" },
               { icon: FileText, href: "#", label: "Resume" }
             ].map((social, i) => (
               <motion.a
                 key={social.label}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 + i * 0.1 }}

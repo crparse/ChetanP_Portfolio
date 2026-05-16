@@ -22,7 +22,8 @@ import {
   ShieldCheck,
   TrendingUp,
   Award,
-  BookOpen
+  BookOpen,
+  Instagram
 } from 'lucide-react';
 
 export const PERSONAL_INFO = {
@@ -32,6 +33,11 @@ export const PERSONAL_INFO = {
   about: "Hi, I’m Chetan Parse, a Backend Developer and AI enthusiast passionate about building scalable systems, intelligent automation tools, and AI-powered applications.\n\nI currently work at C-edge Technologies as a System Analyst (Backend Developer), where I work with production banking systems, Linux environments, databases, server migrations, DR drills, and automation workflows.\n\nI’ve solved 525+ DSA problems and maintained a 450-day coding streak on GeeksforGeeks.",
   building: "ShraK.AI — AI-powered Cloud IDE for Developers.",
   email: "chetanparse73@gmail.com",
+  socials: {
+    github: "https://github.com/crparse",
+    linkedin: "https://www.linkedin.com/in/chetan-parse-43797b17a",
+    instagram: "https://www.instagram.com/chetanparse_/"
+  }
 };
 
 export const SKILL_CATEGORIES = [

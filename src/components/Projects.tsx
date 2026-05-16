@@ -31,10 +31,10 @@ export default function Projects() {
               <div className="absolute inset-0 bg-gradient-to-t from-deep-bg to-transparent opacity-80" />
               
               <div className="absolute top-4 right-4 flex gap-2">
-                <a href={project.github} className="w-10 h-10 rounded-full glass border border-white/20 flex items-center justify-center hover:bg-white hover:text-deep-bg transition-all">
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass border border-white/20 flex items-center justify-center hover:bg-white hover:text-deep-bg transition-all">
                   <Github className="w-5 h-5" />
                 </a>
-                <a href={project.demo} className="w-10 h-10 rounded-full glass border border-white/20 flex items-center justify-center hover:bg-neon-blue hover:text-deep-bg transition-all hover:border-neon-blue">
+                <a href={project.demo} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full glass border border-white/20 flex items-center justify-center hover:bg-neon-blue hover:text-deep-bg transition-all hover:border-neon-blue">
                   <ExternalLink className="w-5 h-5" />
                 </a>
               </div>
