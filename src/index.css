@@ -16,6 +16,10 @@
   body {
     @apply bg-deep-bg text-white font-sans antialiased selection:bg-neon-blue selection:text-deep-bg;
     overflow-x: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
 }
 

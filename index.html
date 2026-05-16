@@ -6,9 +6,51 @@
     <title>Chetan Portfolio</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2322d3ee' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='4 17 10 11 4 5'%3E%3C/polyline%3E%3Cline x1='12' y1='19' x2='20' y2='19'%3E%3C/line%3E%3C/svg%3E">
   </head>
-  <body>
+  <body class="selection:bg-cyan-500/30">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Disable Right-Click
+      document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+      // Disable keyboard shortcuts
+      document.onkeydown = function(e) {
+        // Disable F12
+        if (e.keyCode == 123) return false;
+        
+        // Disable Ctrl+Shift+I (Inspect)
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
+        
+        // Disable Ctrl+Shift+J (Console)
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false;
+        
+        // Disable Ctrl+Shift+C (Element selector)
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) return false;
+        
+        // Disable Ctrl+U (View Source)
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
+
+        // Disable Ctrl+S (Save page)
+        if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) return false;
+      };
+
+      // Continuous debugger trap (obfuscation technique)
+      // Note: This makes inspecting very annoying as it pauses the execution if console is open
+      (function() {
+        const block = function() {
+          setInterval(() => {
+            (function() {
+              return false;
+            }
+            ['constructor']('debugger')
+            ['call']());
+          }, 50);
+        };
+        try {
+          block();
+        } catch (err) {}
+      })();
+    </script>
   </body>
 </html>
 
