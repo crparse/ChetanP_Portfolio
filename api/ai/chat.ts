@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { GoogleGenAI } from '@google/genai';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { PERSONAL_INFO, PROJECTS, SKILL_CATEGORIES, EXPERIENCE, ACHIEVEMENTS } from '../../src/constants';
 
@@ -43,8 +43,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const genAI = new GoogleGenAI({ apiKey });
-    const model = (genAI as any).getGenerativeModel({ 
+    const genAI = new GoogleGenerativeAI(apiKey);
+    const model = genAI.getGenerativeModel({ 
       model: "gemini-1.5-flash",
       systemInstruction: SYSTEM_INSTRUCTION
     });

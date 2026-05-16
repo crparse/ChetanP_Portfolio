@@ -7,7 +7,7 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { createServer as createViteServer } from 'vite';
-import { GoogleGenAI } from '@google/genai';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import dotenv from 'dotenv';
 import { PERSONAL_INFO, PROJECTS, SKILL_CATEGORIES, EXPERIENCE, ACHIEVEMENTS } from './src/constants';
 
@@ -46,7 +46,7 @@ async function startServer() {
   app.use(express.json());
 
   // AI Setup
-  const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
+    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
 
   // API Routes
   app.post('/api/ai/chat', async (req, res) => {
@@ -57,10 +57,10 @@ async function startServer() {
     }
 
     try {
-      const model = (genAI as any).getGenerativeModel({ 
-        model: "gemini-1.5-flash",
-        systemInstruction: SYSTEM_INSTRUCTION
-      });
+      const model = genAI.getGenerativeModel({ 
+      model: "gemini-1.5-flash",
+      systemInstruction: SYSTEM_INSTRUCTION
+    });
       
       const chat = model.startChat({
         history: history || [],
